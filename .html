@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nest Visual Artz</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&display=swap');
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #7B2FF7 0%, #FF3CAC 50%, #00FFF7 100%);
+      color: #fff;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 4rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #FF3CAC, 0 0 20px #7B2FF7;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-shadow: 0 0 5px #00FFF7;
+      margin-bottom: 30px;
+    }
+
+    header a.button {
+      background: #FF3CAC;
+      color: #121212;
+      padding: 15px 40px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 10px #FF3CAC;
+    }
+
+    header a.button:hover {
+      background: #7B2FF7;
+      box-shadow: 0 0 20px #7B2FF7;
+      color: #fff;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #FF3CAC;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    #about p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      text-align: center;
+      color: #ccc;
+    }
+
+    #gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .art-piece {
+      background: #1E1E1E;
+      border-radius: 15px;
+      width: 300px;
+      box-shadow: 0 0 15px #7B2FF7;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .art-piece:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #FF3CAC;
+    }
+
+    .art-piece img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .art-piece h3 {
+      padding: 15px;
+      color: #FF3CAC;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    #skills {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background: #1E1E1E;
+      border-radius: 15px;
+      width: 200px;
+      height: 200px;
+      box-shadow: 0 0 15px #00FFF7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #00FFF7;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      cursor: default;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .skill:hover {
+      box-shadow: 0 0 40px #FF3CAC;
+    }
+
+    .skill-icon {
+      font-size: 4rem;
+      margin-bottom: 15px;
+    }
+
+    #contact {
+      text-align: center;
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    #contact a {
+      color: #FF3CAC;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    #contact a:hover {
+      color: #00FFF7;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      background-color: #121212;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 3rem;
+      }
+
+      header p {
+        font-size: 1.2rem;
+      }
+
+      .art-piece {
+        width: 90%;
+      }
+
+      #skills {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .skill {
+        width: 80%;
+        height: 150px;
+        font-size: 1.1rem;
+      }
+
+      .skill-icon {
+        font-size: 3rem;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Nest Visual Artz</h1>
+    <p>Bold Creations in Painting, Digital Art & Sculpturing</p>
+    <a href="#gallery" class="button">Explore My Art</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Welcome to Nest Visual Artz — a creative space where imagination meets bold expression. I specialize in painting, digital art, and sculpturing, crafting unique pieces that push the boundaries of visual storytelling.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="art-piece">
+      <img src="https://via.placeholder.com/300x200/7B2FF7/FFFFFF?text=Painting+1" alt="Painting 1" />
+      <h3>Painting</h3>
+    </div>
+    <div class="art-piece">
+      <img src="https://via.placeholder.com/300x200/FF3CAC/FFFFFF?text=Digital+Art+1" alt="Digital Art 1" />
+      <h3>Digital Art</h3>
+    </div>
+    <div class="art-piece">
+      <img src="https://via.placeholder.com/300x200/00FFF7/121212?text=Sculpturing+1" alt="Sculpturing 1" />
+      <h3>Sculpturing</h3>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Talents</h2>
+    <div class="skill" title="Painting">
+      <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+      Painting
+    </div>
+    <div class="skill" title="Digital Art">
+      <div class="skill-icon"><i class="fas fa-tablet-alt"></i></div>
+      Digital Art
+    </div>
+    <div class="skill" title="Sculpturing">
+      <div class="skill-icon"><i class="fas fa-sculpture"></i></div>
+      Sculpturing
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Let's connect! Reach out via email or follow me on social media.</p>
+    <p>
+      <a href="mailto:nestvisualartz@example.com">nestvisualartz@example.com</a> | 
+      <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a> | 
+      <a href="#" target="_blank" rel="noopener noreferrer">Behance</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Nest Visual Artz. All rights reserved.
+  </footer>
+</body>
+</html>
